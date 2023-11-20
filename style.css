@@ -1,5 +1,34 @@
-p {
-    height: 50px;
-    width: 100%;
+@keyframes hide {
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+    
+}
+
+div {
+    position: relative;
+    height: 100px;
     background-color: rgb(143, 238, 143);
+    border-radius: 2px;
+    margin-bottom: 3px;
+    animation-name: hide;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+}
+
+.post {
+    width: 90%;
+    margin: 0;
+    text-align: center;
+    padding-top: 41px ;
+    display: inline-block;
+}
+
+.hide{
+    display: inline-block;
 }

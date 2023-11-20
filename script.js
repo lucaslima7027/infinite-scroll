@@ -3,8 +3,20 @@ window.onscroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         load()
     }
+    if (window.body.innerHeight < window.innerHeight) {
+        load()
+    }
 }
 
+document.addEventListener('click', event => {
+    const element = event.target;
+    if (element.className === 'hide') {
+        element.parentElement.style.animationPlayState = "running";
+        element.parentElement.addEventListener('animationend', () => {
+            element.parentElement.remove();
+        })
+    }
+});
 
 let counter = 0;
 
@@ -12,7 +24,7 @@ function load() {
     let html = ""
     for (let index = 0; index < 10; index++) {
         counter ++
-        html += `<p>Post #${counter}</p>`
+        html += `<div><p class="post">Post #${counter}</p><button class="hide">Hide</button></div>`
     }
     document.querySelector('body').innerHTML += html
 }

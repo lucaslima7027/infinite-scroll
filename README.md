@@ -1,3 +1,3 @@
 # infinite-scroll\
 This project uses only JS to make a page with infinite scroll\
-[page link](https://lucaslima7027.github.io/infinite-scroll/)https://lucaslima7027.github.io/infinite-scroll/)
+[Project link](https://lucaslima7027.github.io/infinite-scroll/)

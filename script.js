@@ -1,12 +1,13 @@
+let counter = 0;
+
 // Checks if user is on the bottom of the page
 window.onscroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         load()
     }
-    if (window.body.innerHeight < window.innerHeight) {
-        load()
-    }
 }
+
+
 
 document.addEventListener('click', event => {
     const element = event.target;
@@ -14,11 +15,13 @@ document.addEventListener('click', event => {
         element.parentElement.style.animationPlayState = "running";
         element.parentElement.addEventListener('animationend', () => {
             element.parentElement.remove();
+            if (document.body.scrollHeight <= window.innerHeight) {
+                console.log("hello")
+                load()
+            }
         })
     }
 });
-
-let counter = 0;
 
 function load() {
     let html = ""
